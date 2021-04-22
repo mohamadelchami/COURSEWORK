@@ -21,6 +21,6 @@ Below is a breakdown of each code, mainly the course title.
 - 60-141-W2018: Introduction to Algorithms and Programming II
 
 Additional courses which I am legally not allowed to post the work for would include:
-Object-Oriented Programming with Java
-Database Management
-Computer Architecture I: Digital Design
+- Object-Oriented Programming with Java
+- Database Management
+- Computer Architecture I: Digital Design
