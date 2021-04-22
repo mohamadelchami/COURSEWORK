@@ -1,0 +1,4 @@
+website url: http://comp3340.wu13b.myweb.cs.uwindsor.ca
+there is a user already on the database
+user: john
+password: hd834h8irtj9

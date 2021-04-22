@@ -1,0 +1,60 @@
+===============================================================================
+                  COMP-2560 SYSTEM PROGRAMMING (Summer 2019)
+                                 ASSIGNMENT 1
+===============================================================================
+
+The man2pdf shell script converts UNIX man pages into PDF format. For this
+assignment, refer to the man2pdf script, and answer the following questions.
+You will need access to a UNIX shell and manual; the CS department servers
+have all necessary utilities and man pages installed.
+
+    - Submit answers in ASCII text format, max. 80 characters per line.
+    - Please name your file as follows: comp2560-a1-lastname-studentid.txt
+    - Clearly indicate which question you are answering.
+    - Use correct spelling and grammar in your answers.
+
+DUE:    Sun May 19 23:55:00 EST 2019
+TOTAL:  22 marks
+
+
+(Q1)    What does -z do if it appears as the first non-whitespace token within
+        square brackets? (Hint: read the man page for test.)
+                                                                    [1 mark]
+
+(Q2)    What might go wrong if one does not use quotes around the "$1" in the
+        first if statement? Explain and give a complete brief example. (Hint:
+        write a very short script and try out some inputs.)
+                                                                    [2 marks]
+
+(Q3)    In the first if statement, exit 1 is used. What is the benefit of
+        using exit values from scripts/programs in UNIX?
+                                                                    [1 mark]
+
+(Q4)    What does the util_is_avail() function do? What is the benefit of
+        writing it? (Hint: consider what the script would look like to have
+        the same functionality without it.)
+                                                                    [4 marks]
+
+(Q5)    In the roff2pdf() function, explain what is stored in the TMP_FILE_R
+        variable. (Hint: read the man page for the substituted command.)
+                                                                    [2 marks]
+
+(Q6)    In the roff2pdf() function, why is it important to execute rm -f
+        $TMP_FILE_R at the end of the function under all circumstances?
+                                                                    [2 marks]
+
+(Q7)    Explain everything that is happening on line 125 of the script, where
+        the roff2pdf() function is called. (Hint: sort out the function
+        arguments and input/output redirection.)
+                                                                    [4 marks]
+
+(Q8)    Some of the external commands have 2>/dev/null after them (e.g. lines
+        50, 53, and 117). What does this do and why is it useful in a shell
+        script? (Hints: 2 is a file descriptor, and null has a man page.)
+                                                                    [2 marks]
+
+(Q9)    After certain commands/functions are run, the script sets RETVAL=$?
+        and then checks if [ $RETVAL -ne 0 ] (e.g. lines 57, 64, 118, and
+        126). Explain what gets stored in RETVAL (use one of the cases in the
+        script as an example), and explain the purpose of the if statement.
+                                                                    [4 marks]

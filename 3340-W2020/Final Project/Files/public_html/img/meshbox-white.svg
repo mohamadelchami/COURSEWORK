@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.107" height="13.062" viewBox="0 0 11.107 13.062">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke-width: 0.123px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #fff;
+      }
+
+      .cls-3 {
+        stroke-width: 0.265px;
+        stroke-dasharray: 3.175 0.265;
+      }
+
+      .cls-4 {
+        stroke-width: 0.265px;
+        stroke-dasharray: 3.18 0.265;
+      }
+
+      .cls-5 {
+        stroke-width: 0.1px;
+        stroke-dasharray: 1.2 1.2;
+      }
+    </style>
+  </defs>
+  <g id="meshbox" transform="translate(0 0.062)">
+    <rect id="backgroundrect" class="cls-1" width="11" height="13"/>
+    <g id="Group_1" data-name="Group 1">
+      <g id="layer1">
+        <g id="g1437">
+          <ellipse id="path1021" class="cls-2" cx="0.52" cy="0.453" rx="0.52" ry="0.453" transform="translate(10.006 2.922)"/>
+          <ellipse id="path1021-7" class="cls-2" cx="0.52" cy="0.453" rx="0.52" ry="0.453" transform="translate(0.554 2.964)"/>
+          <ellipse id="path1021-7-2" class="cls-2" cx="0.52" cy="0.453" rx="0.52" ry="0.453" transform="translate(0.507 8.562)"/>
+          <ellipse id="path1021-7-1" class="cls-2" cx="0.52" cy="0.453" rx="0.52" ry="0.453" transform="translate(9.959 8.685)"/>
+          <ellipse id="path1021-7-20" class="cls-2" cx="0.52" cy="0.453" rx="0.52" ry="0.453" transform="translate(5.422 6.051)"/>
+          <ellipse id="path1021-7-3" class="cls-2" cx="0.52" cy="0.453" rx="0.52" ry="0.453" transform="translate(5.422 0)"/>
+          <ellipse id="path1021-7-0" class="cls-2" cx="0.52" cy="0.453" rx="0.52" ry="0.453" transform="translate(5.422 11.751)"/>
+          <path id="path1085" class="cls-3" d="M1.027,3.458,5.941,6.586l4.631-3.17L5.941.453Z"/>
+          <path id="path1089" class="cls-3" d="M1.027,3.458v5.6l4.915,3.211,4.489-3.128.142-5.722"/>
+          <path id="path1091" class="cls-4" d="M5.941,6.586v5.681"/>
+          <path id="path1093" class="cls-5" d="M5.941.453V6.586l4.489,2.552L5.941,6.586,1.027,9.056"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

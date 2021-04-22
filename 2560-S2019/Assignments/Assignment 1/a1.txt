@@ -1,0 +1,41 @@
+Question One
+-z will return true if the string has a length of Zero.
+
+Question Two
+Without quotation marks around $1, $1 would act as a parameter
+
+Question Three
+It is useful to use exit codes in Unix because it supplies important
+information to the calling function. For example if an error was to occur
+the flow of operations may change.
+
+Question Four
+The util_is_avail function checks if a utility is available on the system.
+Returning $1 is it is not available on the system and $2 for the utility name.
+The benefit of writing it would be that the script would check to see which
+utilities are needed before going through with any executions that would
+require said utilities.
+
+Question Five
+A temporary file name is stored in the variable TMP_FILE_R.
+
+Question Six
+It is important to execute rm -f $TMP_FILE_R under all circumstance because it
+is a temporary file that has served its purpose.
+
+Question Seven
+The roff2pdf function is called passing OUTPUT_TITLE to the function. A new
+file will be created with the name stored in OUTPUT_TITLE with the suffix .PDF.
+
+Question Eight
+Redirects strderr to a null device that take any input and discards it.
+
+Question Nine
+$? returns the exit code of the last command. RETVAL holds that value.
+Zero indicated a proper execution and exit. any other code indicates an error
+or another return. When using [ $RETVAL -ne 0 ] we are checking is the value
+of RETVAL is not equal to 0, if it not equal to 0, meaning if an error did
+occur in the previous statement then execute the following commands. In the
+case of line 64, ps2pdf converts the specified file into a pdf. RETVAL will
+then take the exit code from that statement and exit the roff2pdf function
+retuning the appropriate exit code.

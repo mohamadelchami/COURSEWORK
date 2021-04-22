@@ -1,0 +1,72 @@
+===============================================================================
+                  COMP-2560 SYSTEM PROGRAMMING (Summer 2019)
+                                 ASSIGNMENT 3
+===============================================================================
+
+This assignment comes with 3 attached files: mystdio.h, testio.c, and
+Makefile. The deliverable for the assignment is a pair of files named myfile.h
+and mystdio.c, according to the instructions below. Your submission should be
+a .c file in ASCII format with 80 characters per line, and for full marks
+should compile without errors or warnings and pass all tests.
+
+DUE:    Sun Jun 9 23:55:00 EST 2019
+TOTAL:  24 marks
+
+
+The objective of this assigmment is to replicate some of the functionality of
+stdio.h, in your own library called mystdio.h.  The provided project is missing
+two files, myfile.h and mystdio.c. You must implement them in order for it to
+compile and run. DO NOT modify any of the three provided files - your
+submitted files will be compiled with the original files for grading.
+
+In myfile.h, provide a definition of the MYFILE stream structure like so
+(adding any fields you will need in your function definitions):
+
+    typedef struct {
+        /* field declarations here */
+    } MYFILE;
+
+In mystdio.c, define all of the functions declared in mystdio.h (you may also
+add other local functions as needed). DO NOT include stdio.h in this file. Use
+basic I/O calls to implement the functions. You may include other standard
+library headers such as unistd.h and fcntl.h as needed. All functions should
+perform the same operation and return the same values (including setting error
+and EOF flags and returning proper error values) as the corresponding stdio.h
+functions. Refer to the man pages for these functions for details.
+
+In particular, note that the myfopen() and myfdopen() return a pointer to a
+MYFILE struct; this struct must be allocated by the function using an
+appropriate call to malloc(). Likewise, myfclose() should call free() on the
+pointer. The MYFILE pointer becomes invalidated upon calling myfclose().
+
+Although buffering is arguably the main reason to use streams, for the
+purposes of this assignment it is not necessary to implement buffering. The
+idea is to reinforce familiarity with the basic I/O functions while
+introducing the operation of the standard I/O functions.
+
+The project is compiled using the provided makefile by simply calling 'make'
+in the project directory. This produces the executable 'testio'.
+
+It is important to use include guards in your header files to prevent them
+from being included more than once in the same translation unit (which will
+generally lead to compiler errors). See the #ifdef, #define, and #endif
+preprocessor directives in mystdio.h for an example.
+
+If you want to write your own simpler test program to help debug something,
+you can compile it and link it with your mystdio implementation like so:
+
+    gcc -c mystdio.c
+    gcc -o program program.c mystdio.o
+
+where program.c is the name of your test program file. This is completely
+optional and for your information; do not submit your own test programs or any
+files other than mystdio.c and myfile.h.
+
+The program 'testio' runs a variety of simple tests using your implementation
+of mystdio.h. This is a simple version of a practice called unit testing, in
+which small units of functionality are tested. If you have implemented all of
+the functions correctly, you should see 24 PASS lines; each of these is worth
+1 mark for the assignment. Note that if your implementation of mystdio.c
+causes the test program to exit early (e.g. due to a segmentation fault), you
+will not receive marks for any remaining tests, so be careful when dealing
+with buffers and allocated memory.

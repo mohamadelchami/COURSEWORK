@@ -1,0 +1,119 @@
+===============================================================================
+                  COMP-2560 SYSTEM PROGRAMMING (Summer 2019)
+                                 ASSIGNMENT 4
+===============================================================================
+
+This assignment has no attachments. You will write a C program to experiment
+with memory layout to answer the questions below, but the deliverable is an
+ASCII text file containing the answers to the questions (do not submit your C
+program).
+
+    - Submit answers in ASCII text format, max. 80 characters per line.
+    - Please name your file as follows: comp2560-a4-lastname-studentid.txt
+    - Clearly indicate which question you are answering.
+    - Use correct spelling and grammar in your answers.
+
+DUE:    Sun Jun 30 23:55:00 EST 2019
+TOTAL:  20 marks
+
+
+The objective of this assignment is to investigate the memory layout of a C
+program in UNIX.
+
+The CPU has a special register containing the (virtual) memory address of the
+last item put on the stack by a process. On a 64-bit x86 system, the stack
+pointer can be obtained in a C program using the following bit of inline
+assembly code (thanks to GCC):
+
+    unsigned long sp(void)
+    {
+      __asm__("movq %rsp, %rax");
+    }
+
+The code "movq %rsp, %rax" copies the contents of the 64-bit register RSP,
+which contains the stack pointer, into the 64-bit register RAX, which, in the
+cdecl calling convention used by GCC, is where the caller expects to see a
+returned integer value. Thus, this function effectively returns the stack
+pointer address. (On a 32-bit system, use "movl %esp, %eax" instead.)
+
+The conversion specifier %016lx is handy for printing out 64-bit addresses in
+a consistent way using the formatted output functions from <stdio.h>. Note
+that when using the & operator to obtain the address of a variable, the result
+will have the type of a pointer to the variable's type -- you can cast this to
+a long when printing to quiet type warnings from the conversion specifier.
+
+Note that each time a program is run, the actual memory addresses will
+generally differ -- in this assignment, it is the general relationships
+between the addresses in a single instance of the process which are of
+interest. It may be useful to have a hexadecimal calculator on hand.
+
+Write a C program containing a recursive function similar to the following:
+
+    #define MAX_DEPTH 5
+    int depth;
+
+    void f(void)
+    {
+      if(++depth < MAX_DEPTH)
+        f();
+    }
+
+If the global variable 'depth' is initialized to 0 and f() is called from
+main(), f() will call itself MAX_DEPTH more times. For some of the questions
+below, you may want to run f() only once; simply set MAX_DEPTH to 0.
+
+Answer the following questions by successively building on this program.
+
+
+(Q1)    Print the value of the stack pointer at the beginning of f(). Each
+        time f() is called, the current stack pointer value is called. Does
+        this value get higher, get lower, or stay the same in each successive
+        call? Explain why.
+                                                                    [2 marks]
+
+(Q2)    Print the value of the stack pointer at the end of f() -- that is,
+        after the recursive call, but before the function returns. What do you
+        observe about the printed addresses in relation to those printed at
+        the beginning of the function?
+                                                                    [2 marks]
+
+(Q3)    Declare a local variable somewhere in f(), and print its address. Is
+        this address higher or lower than the stack pointer printed by f()?
+        Explain why, and indicate which segment of memory this local variable
+        occupies.
+                                                                    [3 marks]
+
+(Q4)    When f() is called recursively, does the address of your local
+        variable get higher, get lower, or stay the same in each successive
+        call? Explain why.
+                                                                    [2 marks]
+
+(Q5)    Using malloc(), allocate 500 bytes to a char * pointer declared within
+        f(), and print the address of the start of the array (i.e. the value
+        of the pointer, not its address). Where is this address in relation to
+        the stack pointer printed by f()? Indicate which segment of memory this
+        allocated array occupies.
+                                                                    [3 marks]
+
+(Q6)    When f() is called recursively, does the start address of your
+        allocated array get higher, get lower, or stay the same in each
+        successive call? Explain why.
+                                                                    [2 marks]
+
+(Q7)    Allocate a second 500-byte char * array after the one from Q5, and
+        print the address of the start of this array as well. How many bytes
+        apart are the two addresses? If the addresses are not exactly 500
+        bytes apart, explain why. (Hint: the man page malloc(3) mentions that
+        allocated memory is "suitably aligned for any built-in type" -- do
+        some research to find out what this means for your array.)
+                                                                    [2 marks]
+
+(Q8)    Print the address of the global variable 'depth' in f(). Where is this
+        address in relation to the other addresses printed so far? Indicate
+        which segment of memory this variable occupies.
+                                                                    [2 marks]
+
+(Q9)    When f() is called recursively, does the address of the global
+        variable get higher, get lower, or stay the same in each successive
+        call? Explain why.
+                                                                    [2 marks]

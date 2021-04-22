@@ -1,0 +1,36 @@
+===============================================================================
+                  COMP-2560 SYSTEM PROGRAMMING (Summer 2019)
+                                 ASSIGNMENT 6
+===============================================================================
+
+This assignment comes with a project makefile and several source code files.
+For each of the two questions, the deliverable is a C program (client.c and
+doozer.c, respectively) which satisfies the given requirements. The questions
+may be built separately by typing "make q1" and "make q2", respectively.
+
+Your submissions should be .c files in ASCII format with 80 characters per
+line, and for full marks should compile without errors or warnings using the
+given makefiles. DO NOT modify any of the provided files.
+
+DUE:    Sun Jul 28 23:55:00 EST 2019
+TOTAL:  20 marks
+
+
+(Q1)    The program 'client' built with the given makefile should read lines
+        of up to 80 characters in length from standard input and send them via
+        the message queue to a running instance of the program 'server', then
+        retrieve the response and print it to standard output.
+
+        The server's job is to decrypt encrypted messages using the ROT13
+        scheme. The included file cypher.txt can be used as an example input
+        to test your program (you should see legible text printed to the
+        terminal if it worked).
+                                                                    [10 marks]
+
+(Q2)    The program 'doozer' built with the given makefile should attempt to
+        obtain one of the 4 "jobs" provided by the semaphore from an instance
+        of the program 'rock'. It should block until it does. If and when it
+        does, it should print "I'm working!" every two seconds until it
+        receives a SIGINT or SIGTERM, at which point it should return the job
+        and exit.
+                                                                    [10 marks]

@@ -1,0 +1,7 @@
+(a) Only "b" and "d" because they are declared within the function, and "c"  because it is a global variable.
+
+(b) "a" is a perimeter, "a" and "c" will all be visible because they are declared within the function as well as 
+
+(c) The block in which "a" and "d" are declared is g. (void g(int a))
+
+(d) "c" and "d" because they are the only variables declared in that function.

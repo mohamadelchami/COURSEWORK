@@ -1,0 +1,26 @@
+Script started on Fri Feb  2 21:02:48 2018
+[?1034hbash-3.2$ cp assign1.c assign1.backup
+bash-3.2$ typescript assign1.c
+bash: typescript: command not found
+bash-3.2$ typescript assign1.txt
+bash: typescript: command not found
+bash-3.2$ cc assign1.c
+bash-3.2$ ./a.out
+How many integers would you like to reverse? : 6
+Enter a series of numbers to reverse: 24 1 4358 754 302   5 794
+81	0	6714	792	891	792	
+4176
+bash-3.2$ ./a.out
+How many integers would you like to reverse? : 3
+Enter a series of numbers to reverse: 0 9 939 6
+0	0	792	
+297
+bash-3.2$ 2[K./a.out
+How many integers would you like to reverse? : 5
+Enter a series of numbers to reverse: 12 57 1236 15 3473 2
+9	81	5805	63	927	
+5085
+bash-3.2$ exit
+exit
+
+Script done on Fri Feb  2 21:05:38 2018

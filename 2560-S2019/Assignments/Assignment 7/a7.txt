@@ -1,0 +1,56 @@
+Assignment 7
+
+Question One:
+The cleanup() function closes communications between clients. The system message
+control operations immediately removes the message queues, awaening all
+waiting reader and writer processes.
+
+Question Two:
+The message function sends and receives messages from a message queue. If
+the message is longer than msgz bytes and IPC_NOWAIT isn't specified, the
+calling process is blocked until a message of the desired type is placed in the
+queue and breaks.
+
+Question Three:
+It is useful to populate the set with SIGINT and SIGTERM because it means
+SIGINT and SIGTERM can't occur while the code is running unless the message
+is not received.
+
+Question Four:
+A total of 10 clients are able to connect to this server simultaneously
+because The socket associated with the new descriptor returned by accept on
+the server will use the same port on the server side of the connection as the
+original socket. The new socket will have a different client port number.
+
+Question Five:
+INADDR_ANY is used when you don't need to bind a socket to a specific IP.
+When you use this value as the address when calling bind() , the socket accepts
+connections to all the IPs of the machine.
+
+Question Six:
+The child processes occurs every time a new connection is made. The child
+processed terminates when a connection is gone or when a host terminates the
+connection.
+
+Question Seven:
+They are set to default because for every time a new child proccess is
+created, it should have the same disposition as the previous in order to
+all be connected in the same server.
+
+Question Eight:
+The child process receives a message from the connected socket and then uses
+msgsnd to send messages to the message queue.
+
+Question Nine:
+It kills the parent process id because to clear the message queue for any
+upcoming messages sent by a different child process.
+
+Question Ten:
+If the message queue identifier, that is removed from the system, or if
+the message queue is full, then the message is not written in the queue and
+is suspended until the message can be written.
+
+Question Eleven:
+A connected client can cause that for loop if the message has a length
+greater than msgsz and IPC_NOWAIT isn't specified. It will truncate the message
+(NSG_NOERROR)

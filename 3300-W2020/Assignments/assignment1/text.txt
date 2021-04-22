@@ -1,0 +1,6 @@
+Hi my name
+is
+mohamad.
+This is my submission to assignment 1.
+
+This is the same file that I will compare to the new file
